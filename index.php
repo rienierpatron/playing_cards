@@ -10,8 +10,7 @@
     </head>
     <body>
         <label for="players">No. of Players</label>
-        <input type="number" name="players" id="players" min="1" step="1" 
-                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input type="text" name="players" id="players">
         <button id="shuffle">Shuffle Cards</button>
         <h3>Player Hands</h3>
         <div id="player_hands"></div>

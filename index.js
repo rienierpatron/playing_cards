@@ -1,4 +1,10 @@
 function shuffle_cards(players) {
+
+    if ((players.match(/[a-z]/i)) || (players%1 > 0) || (players < 0)) {
+        alert('Player value invalid');
+        return false;
+    }
+
     let url = "process_playing_cards.php?players="+players;
     $.get(url, function(response) {
         $('#player_hands').empty();
