@@ -5,19 +5,19 @@
         
         foreach ($card_suit as $suit) {
             foreach ($card_num as $num) {
-                $deck[] = $suit . "-" . $num;
+                $deck[] = $suit . "-" . $num; // setting card value
             }
         }
-        shuffle($deck);
+        shuffle($deck); //shuffle the cards in random order
         return $deck;
     }
 
-    $players = filter_var($_GET['players'], FILTER_SANITIZE_NUMBER_INT);
+    $players = filter_var($_GET['players'], FILTER_SANITIZE_NUMBER_INT); //ensure that value is int
     $on_hand = array();
-    $shuffled_cards = shuffle_cards();
+    $shuffled_cards = shuffle_cards(); //initialize card shuffling
 
     if ($players > 0) {
-        $card_number = $card_number;
+        $card_number = 52;
         $excess_cards = $card_number%$players; //getting excess cards
         $per_player = ($card_number-$excess_cards)/$players; //getting exact cards per player
     
